@@ -1,32 +1,33 @@
 <table>
 <tr>
-<td width="42%" align="center">
 
-<img src="./arnav-ascii.svg" width="380">
+<td width="35%" align="center">
+
+<img src="./arnav-ascii.svg" width="330">
 
 </td>
 
-<td width="58%">
+<td width="65%">
 
 # Arnav Gupta
 
 ### CSE @ VIT Vellore
+
 **Full-Stack Developer · AI/ML Explorer**
 
 Building with **React, Next.js & Node.js**  
-Exploring **AI/ML** and improving **DSA**
+Exploring **AI/ML · DSA · Full-Stack Development**
 
 <br>
 
 ### 🌐 Connect
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/arnav-gupta-17b209328)
-
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/arnav-0408)
-
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:arnavsm96@gmail.com)
 
 </td>
+
 </tr>
 </table>
 
