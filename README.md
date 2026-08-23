@@ -10,10 +10,6 @@ Building things, solving problems, and learning something new every day.
 
 <img src="./arnav-ascii.svg" width="700">
 
-<br><br>
-
-<img src="./contrib-heatmap.svg" width="860">
-
 </div>
 
 ---
@@ -72,21 +68,33 @@ Building things, solving problems, and learning something new every day.
 
 ---
 
+## 🚀 Featured Interests
+
+| 💻 Development | 🤖 AI / ML | 🧠 Problem Solving |
+|:---:|:---:|:---:|
+| React & Node.js | Machine Learning | Data Structures |
+| Full-Stack Apps | Python | Algorithms |
+| REST APIs | AI Fundamentals | Competitive Programming |
+
+---
+
+## 🎯 Current Goals
+
+- Build strong full-stack projects
+- Learn AI/ML through practical projects
+- Improve DSA and problem-solving skills
+- Contribute to open-source projects
+- Prepare for software engineering internships
+
+---
+
 ## 🤝 Connect With Me
 
-<div align="center">
+[![GitHub](https://img.shields.io/badge/GitHub-0d1117?style=for-the-badge&logo=github&logoColor=white)](https://github.com/arnav-0408)
 
-<a href="https://github.com/arnav-0408">
-  <img src="https://img.shields.io/badge/GitHub-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-</a>
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0d1117?style=for-the-badge&logo=linkedin&logoColor=0A66C2)](https://www.linkedin.com/in/arnav-gupta-17b209328/)
 
-<a href="https://www.linkedin.com/in/arnav-gupta-17b209328/">
-  <img src="https://img.shields.io/badge/LinkedIn-0d1117?style=for-the-badge&logo=linkedin&logoColor=0A66C2" alt="LinkedIn">
-</a>
-
-</div>
-
-<br>
+---
 
 <div align="center">
 
