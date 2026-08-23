@@ -19,10 +19,16 @@ PALETTE = [
     "#69f0a0",
 ]
 
-data = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+data = json.loads(
+    DATA_FILE.read_text(encoding="utf-8")
+)
+
 days = data["days"][-371:]
 
-max_count = max((d["count"] for d in days), default=1)
+max_count = max(
+    (d["count"] for d in days),
+    default=1
+)
 
 
 def get_level(count):
@@ -43,10 +49,12 @@ def get_level(count):
         return 5
 
 
+# Split into weeks
 weeks = [
     days[i:i + 7]
     for i in range(0, len(days), 7)
 ]
+
 
 svg = [
     f'''<svg xmlns="http://www.w3.org/2000/svg"
@@ -56,12 +64,15 @@ svg = [
 
     """
     <style>
+
         .cell {
             opacity: 0;
-            animation: reveal 0.35s ease-out forwards;
+            animation:
+                reveal 1s ease-out forwards;
         }
 
         @keyframes reveal {
+
             from {
                 opacity: 0;
                 transform: translateY(-5px);
@@ -71,89 +82,173 @@ svg = [
                 opacity: 1;
                 transform: translateY(0);
             }
+
         }
+
     </style>
     """,
 
-    '<rect width="100%" height="100%" rx="12" fill="#0d1117"/>',
+    '<rect width="100%" height="100%" '
+    'rx="12" fill="#0d1117"/>',
 
-    '<text x="20" y="28" fill="#c9d1d9" '
-    'font-family="monospace" font-size="16">'
+    '<text x="20" y="28" '
+    'fill="#c9d1d9" '
+    'font-family="monospace" '
+    'font-size="16">'
     'arnav-0408 · contribution activity'
     '</text>'
 ]
 
+
 START_X = 20
 START_Y = 50
+
+
+# =========================================================
+# DRAW CONTRIBUTION CELLS
+# =========================================================
 
 for week_index, week in enumerate(weeks):
 
     for day_index, day in enumerate(week):
 
-        x = START_X + week_index * (CELL + GAP)
-        y = START_Y + day_index * (CELL + GAP)
+        x = (
+            START_X
+            + week_index * (CELL + GAP)
+        )
+
+        y = (
+            START_Y
+            + day_index * (CELL + GAP)
+        )
 
         count = day["count"]
+
         level = get_level(count)
+
         color = PALETTE[level]
 
-        delay = (week_index + day_index) * 0.018
+        # Slower staggered animation
+        delay = (
+            week_index + day_index
+        ) * 0.06
 
         svg.append(
-            f'<rect class="cell" '
-            f'x="{x}" y="{y}" '
-            f'width="{CELL}" height="{CELL}" '
-            f'rx="2" fill="{color}" '
+            f'<rect '
+            f'class="cell" '
+            f'x="{x}" '
+            f'y="{y}" '
+            f'width="{CELL}" '
+            f'height="{CELL}" '
+            f'rx="2" '
+            f'fill="{color}" '
             f'style="animation-delay:{delay:.3f}s">'
-            f'<title>{day["date"]}: '
-            f'{count} contributions</title>'
+            f'<title>'
+            f'{day["date"]}: '
+            f'{count} contributions'
+            f'</title>'
             f'</rect>'
         )
 
+
+# =========================================================
+# STATS
+# =========================================================
+
 total = data["total_contributions"]
+
 current = data["current_streak"]
+
 longest = data["longest_streak"]
 
+
 svg.append(
-    f'<text x="20" y="175" fill="#8b949e" '
-    f'font-family="monospace" font-size="13">'
+    f'<text '
+    f'x="20" '
+    f'y="175" '
+    f'fill="#8b949e" '
+    f'font-family="monospace" '
+    f'font-size="13">'
+
     f'{total:,} contributions · '
-    f'current streak: {current} days · '
-    f'longest streak: {longest} days'
+
+    f'current streak: '
+    f'{current} days · '
+
+    f'longest streak: '
+    f'{longest} days'
+
     f'</text>'
 )
 
-# Legend
+
+# =========================================================
+# LEGEND
+# =========================================================
+
 legend_x = WIDTH - 180
+
 legend_y = 195
 
+
 svg.append(
-    f'<text x="{legend_x - 40}" y="{legend_y + 10}" '
-    f'fill="#8b949e" font-family="monospace" font-size="11">'
-    'Less</text>'
+    f'<text '
+    f'x="{legend_x - 40}" '
+    f'y="{legend_y + 10}" '
+    f'fill="#8b949e" '
+    f'font-family="monospace" '
+    f'font-size="11">'
+    f'Less'
+    f'</text>'
 )
+
 
 for i, color in enumerate(PALETTE):
 
-    x = legend_x + i * 20
+    x = (
+        legend_x
+        + i * 20
+    )
 
     svg.append(
-        f'<rect x="{x}" y="{legend_y}" '
-        f'width="12" height="12" rx="2" '
+        f'<rect '
+        f'x="{x}" '
+        f'y="{legend_y}" '
+        f'width="12" '
+        f'height="12" '
+        f'rx="2" '
         f'fill="{color}"/>'
     )
 
+
 svg.append(
-    f'<text x="{legend_x + 130}" y="{legend_y + 10}" '
-    f'fill="#8b949e" font-family="monospace" font-size="11">'
-    'More</text>'
+    f'<text '
+    f'x="{legend_x + 130}" '
+    f'y="{legend_y + 10}" '
+    f'fill="#8b949e" '
+    f'font-family="monospace" '
+    f'font-size="11">'
+    f'More'
+    f'</text>'
 )
 
+
+# =========================================================
+# CLOSE SVG
+# =========================================================
+
 svg.append("</svg>")
+
+
+# =========================================================
+# WRITE FILE
+# =========================================================
 
 OUTPUT_FILE.write_text(
     "\n".join(svg),
     encoding="utf-8"
 )
 
-print(f"Created {OUTPUT_FILE}")
+print(
+    f"Created {OUTPUT_FILE}"
+)
