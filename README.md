@@ -1,13 +1,13 @@
-<table>
-<tr>
-
-<td width="35%" align="center">
+<div align="center">
 
 <img src="./arnav-ascii.svg" width="330">
 
-</td>
+</div>
 
-<td width="65%">
+<table>
+<tr>
+
+<td width="100%">
 
 # Arnav Gupta
 
