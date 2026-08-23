@@ -12,9 +12,6 @@ Third-year CSE @ VIT Vellore | Full-Stack Developer | Building with React, Next.
 ![](https://streak-stats.demolab.com/?user=arnav-0408&theme=neon&hide_border=false)<br/>
 ![](https://github-readme-stats.shion.dev/api/top-langs/?username=arnav-0408&theme=neon&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
-## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=arnav-0408&theme=shadow_blue&no-frame=false&no-bg=false&margin-w=4)
-
 ### ✍️ Random Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
 
