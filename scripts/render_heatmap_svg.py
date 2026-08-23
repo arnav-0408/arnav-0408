@@ -67,7 +67,7 @@ svg = [
 
         .cell {
             opacity: 0;
-            animation: reveal 1.5s ease-out forwards;
+            animation: reveal 0.75s ease-out forwards;
         }
 
         @keyframes reveal {
@@ -127,10 +127,10 @@ for week_index, week in enumerate(weeks):
 
         color = PALETTE[level]
 
-        # Faster staggered animation
+        # 2x faster stagger
         delay = (
-            week_index * 0.15
-            + day_index * 0.03
+            week_index * 0.075
+            + day_index * 0.015
         )
 
         svg.append(
@@ -189,7 +189,6 @@ svg.append(
 # =========================================================
 
 legend_x = WIDTH - 180
-
 legend_y = 195
 
 
