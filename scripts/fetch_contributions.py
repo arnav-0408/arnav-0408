@@ -1,10 +1,9 @@
 import json
-import re
+import os
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
-from bs4 import BeautifulSoup
 
 
 # =========================================================
@@ -13,168 +12,177 @@ from bs4 import BeautifulSoup
 
 USERNAME = "arnav-0408"
 
-URL = f"https://github.com/users/{USERNAME}/contributions"
+OUTPUT_FILE = Path(
+    "data/contributions.json"
+)
 
-OUTPUT_FILE = Path("data/contributions.json")
+GRAPHQL_URL = "https://api.github.com/graphql"
+
+TOKEN = os.getenv("GH_TOKEN")
 
 
 # =========================================================
-# FETCH GITHUB CONTRIBUTION PAGE
+# CHECK TOKEN
 # =========================================================
 
-response = requests.get(
-    URL,
+if not TOKEN:
+    raise RuntimeError(
+        "GH_TOKEN is not set."
+    )
+
+
+# =========================================================
+# GRAPHQL QUERY
+# =========================================================
+
+QUERY = """
+query($login: String!, $from: DateTime!, $to: DateTime!) {
+    user(login: $login) {
+        contributionsCollection(
+            from: $from
+            to: $to
+        ) {
+            contributionCalendar {
+                totalContributions
+
+                weeks {
+                    contributionDays {
+                        date
+                        contributionCount
+                        weekday
+                    }
+                }
+            }
+
+            restrictedContributionsCount
+        }
+    }
+}
+"""
+
+
+# =========================================================
+# DATE RANGE
+# =========================================================
+
+today = datetime.now(
+    timezone.utc
+).date()
+
+end_date = today + timedelta(
+    days=1
+)
+
+start_date = end_date - timedelta(
+    days=365
+)
+
+from_datetime = (
+    f"{start_date.isoformat()}T00:00:00Z"
+)
+
+to_datetime = (
+    f"{end_date.isoformat()}T00:00:00Z"
+)
+
+
+# =========================================================
+# REQUEST
+# =========================================================
+
+response = requests.post(
+    GRAPHQL_URL,
+
     headers={
-        "User-Agent": "Mozilla/5.0",
-        "Referer": f"https://github.com/{USERNAME}",
-        "X-Requested-With": "XMLHttpRequest",
+        "Authorization": f"Bearer {TOKEN}",
+        "Content-Type": "application/json",
+        "User-Agent": "arnav-contribution-heatmap",
     },
+
+    json={
+        "query": QUERY,
+
+        "variables": {
+            "login": USERNAME,
+            "from": from_datetime,
+            "to": to_datetime,
+        },
+    },
+
     timeout=30,
 )
 
 response.raise_for_status()
 
-soup = BeautifulSoup(
-    response.text,
-    "html.parser"
-)
+result = response.json()
 
 
 # =========================================================
-# CONTRIBUTION CELLS
+# GRAPHQL ERRORS
 # =========================================================
 
-cells = soup.select(
-    ".js-calendar-graph-table "
-    ".ContributionCalendar-day[data-date]"
-)
+if "errors" in result:
 
-print(
-    f"Found {len(cells)} contribution cells"
-)
+    print(
+        json.dumps(
+            result["errors"],
+            indent=2
+        )
+    )
 
-if not cells:
     raise RuntimeError(
-        "No contribution cells found."
+        "GitHub GraphQL API returned an error."
     )
 
 
 # =========================================================
-# TOOLTIP MAP
-# =========================================================
-#
-# GitHub structure:
-#
-# <td
-#     id="contribution-day-component-..."
-#     data-date="2026-08-23"
-#     data-level="4">
-# </td>
-#
-# <tool-tip
-#     for="contribution-day-component-...">
-#     15 contributions on August 23rd.
-# </tool-tip>
-#
+# GET USER DATA
 # =========================================================
 
-tooltip_map = {}
+user = result["data"]["user"]
 
-for tooltip in soup.select(
-    ".js-calendar-graph tool-tip"
-):
+if not user:
 
-    tooltip_for = tooltip.get("for")
-
-    if tooltip_for:
-        tooltip_map[tooltip_for] = tooltip
+    raise RuntimeError(
+        f"GitHub user '{USERNAME}' "
+        "was not found."
+    )
 
 
-print(
-    f"Found {len(tooltip_map)} contribution tooltips"
+collection = (
+    user["contributionsCollection"]
+)
+
+calendar = (
+    collection["contributionCalendar"]
 )
 
 
 # =========================================================
-# EXTRACT DAYS
+# BUILD DAILY DATA
 # =========================================================
 
 days = []
 
-for cell in cells:
+for week in calendar["weeks"]:
 
-    date = cell.get("data-date")
+    for day in week["contributionDays"]:
 
-    cell_id = cell.get("id")
-
-    if not date:
-        continue
-
-    count = 0
-
-    tooltip = tooltip_map.get(cell_id)
-
-    if tooltip:
-
-        # Get ONLY the direct text inside tool-tip.
-        text = tooltip.get_text(
-            " ",
-            strip=True
+        days.append(
+            {
+                "date": day["date"],
+                "count": day["contributionCount"],
+            }
         )
 
-        # Examples:
-        #
-        # 15 contributions on August 23rd.
-        # 1 contribution on February 13th.
-        # No contributions on August 24th.
-        #
-        match = re.match(
-            r"(\d[\d,]*)\s+contribution",
-            text,
-            re.IGNORECASE
-        )
 
-        if match:
-
-            count = int(
-                match.group(1)
-                .replace(",", "")
-            )
-
-    days.append(
-        {
-            "date": date,
-            "count": count,
-        }
-    )
+days.sort(
+    key=lambda x: x["date"]
+)
 
 
 # =========================================================
-# REMOVE DUPLICATE DATES
-# =========================================================
-
-unique_days = {}
-
-for day in days:
-
-    unique_days[
-        day["date"]
-    ] = day["count"]
-
-
-days = [
-    {
-        "date": date,
-        "count": count,
-    }
-    for date, count in sorted(
-        unique_days.items()
-    )
-]
-
-
-# =========================================================
-# VALIDATE DATA
+# TOTAL
 # =========================================================
 
 total = sum(
@@ -182,17 +190,36 @@ total = sum(
     for day in days
 )
 
-print(
-    f"Total contributions found: {total}"
+api_total = (
+    calendar["totalContributions"]
 )
 
 
-# NEVER OVERWRITE GOOD DATA WITH ZERO
+print(
+    f"GraphQL total: {api_total}"
+)
+
+print(
+    f"Calculated total: {total}"
+)
+
+
+# =========================================================
+# VALIDATION
+# =========================================================
+
 if total == 0:
 
     raise RuntimeError(
-        "ERROR: GitHub returned 0 contributions. "
+        "GitHub API returned 0 contributions. "
         "Existing data was NOT overwritten."
+    )
+
+if total != api_total:
+
+    raise RuntimeError(
+        "Calculated contribution total does "
+        "not match GitHub's calendar total."
     )
 
 
@@ -216,26 +243,23 @@ day_map = {
         day["date"],
         "%Y-%m-%d"
     ).date(): day["count"]
+
     for day in days
 }
 
 
-today = datetime.now(
-    timezone.utc
-).date()
-
+current_date = today
 
 current_streak = 0
 
-
 while day_map.get(
-    today,
+    current_date,
     0
 ) > 0:
 
     current_streak += 1
 
-    today -= timedelta(
+    current_date -= timedelta(
         days=1
     )
 
@@ -245,7 +269,6 @@ while day_map.get(
 # =========================================================
 
 longest_streak = 0
-
 streak = 0
 
 for day in days:
