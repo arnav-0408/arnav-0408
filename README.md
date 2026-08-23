@@ -11,14 +11,10 @@
 
 # Arnav Gupta
 
-### CSE @ VIT Vellore
-
+**CSE @ VIT Vellore**  
 **Full-Stack Developer · AI/ML Explorer**
 
-Building with **React, Next.js & Node.js**  
-Exploring **AI/ML · DSA · Full-Stack Development**
-
-<br>
+React · Next.js · Node.js · AI/ML · DSA
 
 ### 🌐 Connect
 
@@ -30,12 +26,6 @@ Exploring **AI/ML · DSA · Full-Stack Development**
 
 </tr>
 </table>
-
----
-
-# 💫 About Me
-
-Third-year CSE @ VIT Vellore | Full-Stack Developer | Building with React, Next.js & Node.js | Exploring AI/ML
 
 ---
 
