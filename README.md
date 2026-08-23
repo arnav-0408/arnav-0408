@@ -1,17 +1,12 @@
 <div align="center">
 
-<table>
-<tr>
+## 📊 GitHub Activity
 
-<td width="45%" align="center">
+<img src="./contrib-heatmap.svg" width="860">
 
-### 📊 GitHub Activity
+</div>
 
-<img src="./contrib-heatmap.svg" width="420">
-
-</td>
-
-<td width="55%" align="left">
+---
 
 # Arnav Gupta
 
@@ -20,24 +15,19 @@
 
 React · Next.js · Node.js · AI/ML · DSA
 
-### 🌐 Connect
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/arnav-gupta-17b209328)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/arnav-0408)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:arnavsm96@gmail.com)
-
-</td>
-
-</tr>
-</table>
-
-</div>
-
 ---
 
 ## 💫 About Me
 
 Third-year CSE undergraduate at **VIT Vellore**, focused on **full-stack development, DSA, and AI/ML**. I enjoy building practical applications with **React, Next.js, Node.js, and Python**, while continuously improving my problem-solving and software engineering skills.
+
+---
+
+## 🌐 Connect
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/arnav-gupta-17b209328)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/arnav-0408)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:arnavsm96@gmail.com)
 
 ---
 
