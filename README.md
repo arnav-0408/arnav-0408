@@ -1,13 +1,4 @@
-<div align="center">
-
-<img src="./arnav-ascii.svg" width="330">
-
-</div>
-
-<table>
-<tr>
-
-<td width="100%">
+<img align="left" src="./arnav-ascii.svg" width="300">
 
 # Arnav Gupta
 
@@ -22,10 +13,7 @@ React · Next.js · Node.js · AI/ML · DSA
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/arnav-0408)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:arnavsm96@gmail.com)
 
-</td>
-
-</tr>
-</table>
+<br clear="left">
 
 ---
 
