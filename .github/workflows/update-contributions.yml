@@ -3,16 +3,20 @@ name: Update GitHub Contributions
 on:
   schedule:
     - cron: "0 18 * * *"
+
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
+
   update:
+
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -23,9 +27,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests beautifulsoup4
+          pip install requests
 
       - name: Fetch contributions
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           python scripts/fetch_contributions.py
 
