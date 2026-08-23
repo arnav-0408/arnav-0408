@@ -49,7 +49,7 @@ def get_level(count):
         return 5
 
 
-# Split into weeks
+# Split contribution data into weeks
 weeks = [
     days[i:i + 7]
     for i in range(0, len(days), 7)
@@ -68,7 +68,7 @@ svg = [
         .cell {
             opacity: 0;
             animation:
-                reveal 1s ease-out forwards;
+                reveal 2.5s ease-out forwards;
         }
 
         @keyframes reveal {
@@ -105,7 +105,7 @@ START_Y = 50
 
 
 # =========================================================
-# DRAW CONTRIBUTION CELLS
+# CONTRIBUTION CELLS
 # =========================================================
 
 for week_index, week in enumerate(weeks):
@@ -128,10 +128,10 @@ for week_index, week in enumerate(weeks):
 
         color = PALETTE[level]
 
-        # Slower staggered animation
+        # MUCH SLOWER STAGGER
         delay = (
             week_index + day_index
-        ) * 0.06
+        ) * 0.15
 
         svg.append(
             f'<rect '
@@ -143,16 +143,18 @@ for week_index, week in enumerate(weeks):
             f'rx="2" '
             f'fill="{color}" '
             f'style="animation-delay:{delay:.3f}s">'
+
             f'<title>'
             f'{day["date"]}: '
             f'{count} contributions'
             f'</title>'
+
             f'</rect>'
         )
 
 
 # =========================================================
-# STATS
+# STATISTICS
 # =========================================================
 
 total = data["total_contributions"]
@@ -187,7 +189,6 @@ svg.append(
 # =========================================================
 
 legend_x = WIDTH - 180
-
 legend_y = 195
 
 
