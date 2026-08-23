@@ -1,6 +1,6 @@
 <div align="center">
 
-## 📊 GitHub Activity
+# 📊 GitHub Activity
 
 <img src="./contrib-heatmap.svg" width="860">
 
@@ -8,26 +8,39 @@
 
 ---
 
+<table>
+<tr>
+<td width="30%" align="center">
+
+<img src="./arnav-ascii.svg" width="250">
+
+</td>
+
+<td width="70%">
+
 # Arnav Gupta
 
-**CSE @ VIT Vellore**  
+### CSE @ VIT Vellore
+
 **Full-Stack Developer · AI/ML Explorer**
 
-React · Next.js · Node.js · AI/ML · DSA
+Building modern web applications with **React, Next.js & Node.js** while exploring **AI/ML** and strengthening **DSA & problem-solving** skills.
+
+### 🌐 Connect
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/arnav-gupta-17b209328)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/arnav-0408)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:arnavsm96@gmail.com)
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## 💫 About Me
 
-Third-year CSE undergraduate at **VIT Vellore**, focused on **full-stack development, DSA, and AI/ML**. I enjoy building practical applications with **React, Next.js, Node.js, and Python**, while continuously improving my problem-solving and software engineering skills.
-
----
-
-## 🌐 Connect
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/arnav-gupta-17b209328)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/arnav-0408)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:arnavsm96@gmail.com)
+Third-year Computer Science undergraduate at **VIT Vellore**, focused on **full-stack development, AI/ML, and problem solving**. I enjoy building practical applications, learning new technologies, and continuously improving my software engineering and DSA skills.
 
 ---
 
@@ -60,7 +73,7 @@ Third-year CSE undergraduate at **VIT Vellore**, focused on **full-stack develop
 
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![NodeJS](https://img.shields.io/badge/NodeJS-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Nodemon](https://img.shields.io/badge/Nodemon-76D04B?style=for-the-badge&logo=nodemon&logoColor=white)
 ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 
@@ -84,8 +97,21 @@ Third-year CSE undergraduate at **VIT Vellore**, focused on **full-stack develop
 
 ---
 
-<div align="center">
+## 🚀 What I'm Working On
 
-**Building → Learning → Improving**
+- Full-stack web applications
+- React & Next.js projects
+- AI/ML fundamentals and practical projects
+- Data Structures & Algorithms
+- Open-source and real-world development
 
-</div>
+---
+
+## 🎯 Current Goals
+
+```text
+▸ Build strong full-stack projects
+▸ Learn AI/ML through practical projects
+▸ Improve DSA and problem-solving skills
+▸ Contribute to open-source projects
+▸ Prepare for software engineering opportunities
