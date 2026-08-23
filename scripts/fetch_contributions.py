@@ -15,18 +15,17 @@ USERNAME = "arnav-0408"
 
 URL = f"https://github.com/users/{USERNAME}/contributions"
 
-OUTPUT = Path("data/contributions.json")
+OUTPUT_FILE = Path("data/contributions.json")
 
 
 # =========================================================
-# FETCH GITHUB PAGE
+# FETCH GITHUB CONTRIBUTION PAGE
 # =========================================================
 
 response = requests.get(
     URL,
     headers={
         "User-Agent": "Mozilla/5.0",
-        "Accept": "text/html",
         "Referer": f"https://github.com/{USERNAME}",
         "X-Requested-With": "XMLHttpRequest",
     },
@@ -42,7 +41,7 @@ soup = BeautifulSoup(
 
 
 # =========================================================
-# FIND CONTRIBUTION CELLS
+# CONTRIBUTION CELLS
 # =========================================================
 
 cells = soup.select(
@@ -56,33 +55,48 @@ print(
 
 if not cells:
     raise RuntimeError(
-        "Could not find GitHub contribution cells."
+        "No contribution cells found."
     )
 
 
 # =========================================================
-# FIND TOOLTIPS
+# TOOLTIP MAP
+# =========================================================
+#
+# GitHub structure:
+#
+# <td
+#     id="contribution-day-component-..."
+#     data-date="2026-08-23"
+#     data-level="4">
+# </td>
+#
+# <tool-tip
+#     for="contribution-day-component-...">
+#     15 contributions on August 23rd.
+# </tool-tip>
+#
 # =========================================================
 
-tooltips = {}
+tooltip_map = {}
 
 for tooltip in soup.select(
     ".js-calendar-graph tool-tip"
 ):
 
-    tooltip_id = tooltip.get("for")
+    tooltip_for = tooltip.get("for")
 
-    if tooltip_id:
-        tooltips[tooltip_id] = tooltip
+    if tooltip_for:
+        tooltip_map[tooltip_for] = tooltip
 
 
 print(
-    f"Found {len(tooltips)} contribution tooltips"
+    f"Found {len(tooltip_map)} contribution tooltips"
 )
 
 
 # =========================================================
-# EXTRACT DAILY CONTRIBUTIONS
+# EXTRACT DAYS
 # =========================================================
 
 days = []
@@ -98,58 +112,25 @@ for cell in cells:
 
     count = 0
 
-    # -----------------------------------------------------
-    # Method 1: matching tool-tip
-    # -----------------------------------------------------
-
-    tooltip = tooltips.get(cell_id)
+    tooltip = tooltip_map.get(cell_id)
 
     if tooltip:
 
+        # Get ONLY the direct text inside tool-tip.
         text = tooltip.get_text(
             " ",
             strip=True
         )
 
-        match = re.search(
+        # Examples:
+        #
+        # 15 contributions on August 23rd.
+        # 1 contribution on February 13th.
+        # No contributions on August 24th.
+        #
+        match = re.match(
             r"(\d[\d,]*)\s+contribution",
             text,
-            re.IGNORECASE
-        )
-
-        if match:
-
-            count = int(
-                match.group(1)
-                .replace(",", "")
-            )
-
-    # -----------------------------------------------------
-    # Method 2: fallback to cell attributes/text
-    # -----------------------------------------------------
-
-    if count == 0:
-
-        possible_text = " ".join(
-            [
-                cell.get_text(
-                    " ",
-                    strip=True
-                ),
-                cell.get(
-                    "aria-label",
-                    ""
-                ),
-                cell.get(
-                    "title",
-                    ""
-                ),
-            ]
-        )
-
-        match = re.search(
-            r"(\d[\d,]*)\s+contribution",
-            possible_text,
             re.IGNORECASE
         )
 
@@ -169,7 +150,7 @@ for cell in cells:
 
 
 # =========================================================
-# REMOVE DUPLICATES
+# REMOVE DUPLICATE DATES
 # =========================================================
 
 unique_days = {}
@@ -193,7 +174,7 @@ days = [
 
 
 # =========================================================
-# VALIDATION
+# VALIDATE DATA
 # =========================================================
 
 total = sum(
@@ -205,12 +186,13 @@ print(
     f"Total contributions found: {total}"
 )
 
+
+# NEVER OVERWRITE GOOD DATA WITH ZERO
 if total == 0:
 
     raise RuntimeError(
-        "GitHub returned contribution cells, "
-        "but all contribution counts were 0. "
-        "Refusing to overwrite existing data."
+        "ERROR: GitHub returned 0 contributions. "
+        "Existing data was NOT overwritten."
     )
 
 
@@ -229,32 +211,33 @@ best_day = max(
 # CURRENT STREAK
 # =========================================================
 
+day_map = {
+    datetime.strptime(
+        day["date"],
+        "%Y-%m-%d"
+    ).date(): day["count"]
+    for day in days
+}
+
+
+today = datetime.now(
+    timezone.utc
+).date()
+
+
 current_streak = 0
 
-if days:
 
-    today = datetime.now(
-        timezone.utc
-    ).date()
+while day_map.get(
+    today,
+    0
+) > 0:
 
-    day_map = {
-        datetime.strptime(
-            day["date"],
-            "%Y-%m-%d"
-        ).date(): day["count"]
-        for day in days
-    }
+    current_streak += 1
 
-    while day_map.get(
-        today,
-        0
-    ) > 0:
-
-        current_streak += 1
-
-        today -= timedelta(
-            days=1
-        )
+    today -= timedelta(
+        days=1
+    )
 
 
 # =========================================================
@@ -267,9 +250,7 @@ streak = 0
 
 for day in days:
 
-    count = day["count"]
-
-    if count > 0:
+    if day["count"] > 0:
 
         streak += 1
 
@@ -284,7 +265,7 @@ for day in days:
 
 
 # =========================================================
-# DATA
+# BUILD DATA
 # =========================================================
 
 data = {
@@ -316,12 +297,12 @@ data = {
 # SAVE
 # =========================================================
 
-OUTPUT.parent.mkdir(
+OUTPUT_FILE.parent.mkdir(
     parents=True,
     exist_ok=True
 )
 
-OUTPUT.write_text(
+OUTPUT_FILE.write_text(
     json.dumps(
         data,
         indent=2
@@ -335,9 +316,9 @@ OUTPUT.write_text(
 # =========================================================
 
 print()
-print("=" * 50)
+print("=" * 60)
 print("RESULT")
-print("=" * 50)
+print("=" * 60)
 
 print(
     f"Fetched {len(days)} days"
@@ -363,4 +344,4 @@ if best_day:
         f'({best_day["count"]} contributions)'
     )
 
-print("=" * 50)
+print("=" * 60)
