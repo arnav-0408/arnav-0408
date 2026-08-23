@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    width="770"
+    height="740"
+    viewBox="0 0 770 740">
+
+    <style>
+
+        .row {
+            opacity: 0;
+            animation: reveal 0.28s ease-out forwards;
+        }
+
+        @keyframes reveal {
+
+            from {
+                opacity: 0;
+                transform: translateX(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+        }
+
+        text {
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size: 10px;
+            font-weight: bold;
+            fill: #c9d1d9;
+        }
+
+    </style>
+    
+<rect width="100%" height="100%" rx="12" fill="#0d1117"/>
+<text xml:space="preserve" class="row" x="8" y="18" style="animation-delay:0.000s">     ...               ...                         ........   .....                                         . </text>
+<text xml:space="preserve" class="row" x="8" y="28" style="animation-delay:0.025s">     .....          ....                          ............ ....                                           </text>
+<text xml:space="preserve" class="row" x="8" y="38" style="animation-delay:0.050s">     ......                                      ...................                                          </text>
+<text xml:space="preserve" class="row" x="8" y="48" style="animation-delay:0.075s">     ......         .                      ..............:::::.:......  ..                               .    </text>
+<text xml:space="preserve" class="row" x="8" y="58" style="animation-delay:0.100s">.     ..       ..       ...                             ...::::::...     .....                            ..  </text>
+<text xml:space="preserve" class="row" x="8" y="68" style="animation-delay:0.125s">.    .       ......    ........   ....                       ..::....    .....                                </text>
+<text xml:space="preserve" class="row" x="8" y="78" style="animation-delay:0.150s">.                 .    .......  ....                              ..:..   .........                           </text>
+<text xml:space="preserve" class="row" x="8" y="88" style="animation-delay:0.175s">...   .                                           .                    .. ...........                        .</text>
+<text xml:space="preserve" class="row" x="8" y="98" style="animation-delay:0.200s">.........   ..................           .::::::::::::..            ......:::..........                       </text>
+<text xml:space="preserve" class="row" x="8" y="108" style="animation-delay:0.225s">...........  ...   ..............     .:--+++++++++++--:.            .::::::::::::::...                       </text>
+<text xml:space="preserve" class="row" x="8" y="118" style="animation-delay:0.250s">................  ...............  .---++++++++++++++++-:.           .:::::::---::::::...                   ..</text>
+<text xml:space="preserve" class="row" x="8" y="128" style="animation-delay:0.275s">............................:...:.:-++++*++-::--------++++-.         .::-::------::::::::..                 ..</text>
+<text xml:space="preserve" class="row" x="8" y="138" style="animation-delay:0.300s">...........................:::..::---+****+++-----+++++++++-.        .-----:------:::--::.....             ...</text>
+<text xml:space="preserve" class="row" x="8" y="148" style="animation-delay:0.325s">..........................:::::..::---+***++:..:--:-+*****+-:    ..  .---:::-------::---::....            ....</text>
+<text xml:space="preserve" class="row" x="8" y="158" style="animation-delay:0.350s">................  ......:::::::..--:.--+**+++++*********+++-. .:-**- .----:-+-----------:::...            ....</text>
+<text xml:space="preserve" class="row" x="8" y="168" style="animation-delay:0.375s">........................::::::.. .:--+*#***+*##########**+++:.-++##*.:--+--+++--------:::......           ....</text>
+<text xml:space="preserve" class="row" x="8" y="178" style="animation-delay:0.400s">.........................:--::....-**####***-*#%%%%%###**+++--+#*%%*.-++--+--::--+---::::..........     ......</text>
+<text xml:space="preserve" class="row" x="8" y="188" style="animation-delay:0.425s">::::.....................----::::-*##*-******##%%%%#####*+++--*##%#-.+++++--::-+++---:::::.:::....... .... ...</text>
+<text xml:space="preserve" class="row" x="8" y="198" style="animation-delay:0.450s">::::::::..............:.:-----:::-####***####***#%####%##*++--+*##+.:+*+**----+++++-+----::::::...............</text>
+<text xml:space="preserve" class="row" x="8" y="208" style="animation-delay:0.475s">:::::::::::::........:::::-:-::---*##*+#%%%%#*+++%%%#%%%#*+---+--:  +******+++++++*++--++-::-::.:.............</text>
+<text xml:space="preserve" class="row" x="8" y="218" style="animation-delay:0.500s">::::::::::::::::::::.:::::---::----##++##%%%%%%##%%%%%%#**+----+-: :+*####*******+++++++++---::::::...........</text>
+<text xml:space="preserve" class="row" x="8" y="228" style="animation-delay:0.525s">:::::::::::::::--------:::::-------+##%%%%%%%####%#####*+-----+++..+**#*###***++*****+++++----::-:::..........</text>
+<text xml:space="preserve" class="row" x="8" y="238" style="animation-delay:0.550s">::::::::::::::---++++++---::--------*%%%%%%%%#*******++------+*#+:-++*##***#***+++++++++++-------:::..........</text>
+<text xml:space="preserve" class="row" x="8" y="248" style="animation-delay:0.575s">::::::::::::::---++++++--------------*#%##***+--------::::--*###+:..::-******+++++++++++++-------:::..........</text>
+<text xml:space="preserve" class="row" x="8" y="258" style="animation-delay:0.600s">:::::::::::::----++++++-:-:------+-+-----:...:::-::::::::-+*####*:..---:-***+--++++++++-----------:::.........</text>
+<text xml:space="preserve" class="row" x="8" y="268" style="animation-delay:0.625s">:::::::::::::::------+-+:::-::..::::::----:..::::::-----+**#%%%#*-..---.::-+-+++***+++++--::----:::......     </text>
+<text xml:space="preserve" class="row" x="8" y="278" style="animation-delay:0.650s">.::::::::::...........::-----+-:.:::::-+#*:.-:..::-+++***##%%%%#+-:---:.::-::::-------:.::::...:........      </text>
+<text xml:space="preserve" class="row" x="8" y="288" style="animation-delay:0.675s">.::::::::::............::-------------#@%+:.+%*++++****###%%%%#*+-+--::.::---::-:::::..:-:..............      </text>
+<text xml:space="preserve" class="row" x="8" y="298" style="animation-delay:0.700s">::::::::...........:..::----+++---:-*%@@*---.*@@%#######%%%%%%#**++--:.::----------:---::-:::::::::::.....    </text>
+<text xml:space="preserve" class="row" x="8" y="308" style="animation-delay:0.725s">::::::::..........::::--+++++++--++**:.+#---:.*@@@@@@%%%%%%%%%#*+----::::----------------+++--------::::....  </text>
+<text xml:space="preserve" class="row" x="8" y="318" style="animation-delay:0.750s">:::::::::...::::::::--+++++++*##**%#:...**+--.:*#@@@@@@@@@%%%#+-.  ..:---------+--+++++++-++++-+---:::........</text>
+<text xml:space="preserve" class="row" x="8" y="328" style="animation-delay:0.775s">:::::::::...:-++++-:-++-+****##%%%%#:..:--+*+---*#%%@@@@@@@@#-:..:---:::---++++++++**++**++++++---::-::.......</text>
+<text xml:space="preserve" class="row" x="8" y="338" style="animation-delay:0.800s">:::::::::....:-+*****+--+**####*++**+..:+*+.-+++*#%%%@@@@@%*:..:-++---+*##%##***##*+**#####-++++--:::::.......</text>
+<text xml:space="preserve" class="row" x="8" y="348" style="animation-delay:0.825s">:::::::::::::::-***###*+++--*+----+*++.-*#+-.:+++*%%%%%@%+-:.:-*#***%@@@%####%%%%%%**#***##:+++-:::::.:.......</text>
+<text xml:space="preserve" class="row" x="8" y="358" style="animation-delay:0.850s">::::::::::::::::-+****-----*+----:**+*+*##++-.:-++*#%%%*-:..-+***##%@@@#+++++#****###*++--:-+++-:.............</text>
+<text xml:space="preserve" class="row" x="8" y="368" style="animation-delay:0.875s">::::::::::::::::---++*+---+++-::--***+**##*+-:::++-+##*:..:--++**###**++++++++*++*#-%%#**+-###*+-:......... ..</text>
+<text xml:space="preserve" class="row" x="8" y="378" style="animation-delay:0.900s">:::::::::...:::-----++++-+++-::-++-*--*#%#*++-:-+**-+*-:.:-++**++--+++***%%#**+****#+#%#+*%%%##*+-:..::....   </text>
+<text xml:space="preserve" class="row" x="8" y="388" style="animation-delay:0.925s">::::::::::::::-----+++++-++-.:--*#**:**#%#*++-:-+*#+-+-::--*%@%#---+#*#*##%###**##%#*%@%#*##%##**+:..::.......</text>
+<text xml:space="preserve" class="row" x="8" y="398" style="animation-delay:0.950s">:::::::::::::::--:-+++*+-+-::.:-##*-*##%%#*++::-+*##+--::-+%@%#+--++**#**##@%%*****##%%#++******+-:..:::......</text>
+<text xml:space="preserve" class="row" x="8" y="408" style="animation-delay:0.975s">:::::::::....:--:::+++*++-:.:::+######%%##+*+.-++*##*+-::-+#*++--+#**#**+++*%%#*+*#*#%%#-*++++--:.....:::..:::</text>
+<text xml:space="preserve" class="row" x="8" y="418" style="animation-delay:1.000s">:::::::::...::--:.:-+***+:..:-+++*####%%##**+.-++**#*+-:--**++--+*%%%###*-+:*#***+**##*:-**+----::....:::.::::</text>
+<text xml:space="preserve" class="row" x="8" y="428" style="animation-delay:1.025s">::::::::::::::--:.::-+*+--..::++***%##%###**+:+++**#*+-:-+*++----#####*#*##+:+++****++-:+++----:...........:::</text>
+<text xml:space="preserve" class="row" x="8" y="438" style="animation-delay:1.050s">:::::::::::::::::..:-+**+-::.:---+#%####%##*+-++*****+--+*****+--*#*##+#*%%%#+*+**#**+--++-::--:............::</text>
+<text xml:space="preserve" class="row" x="8" y="448" style="animation-delay:1.075s">::::::::::::::::...::-**+:::::---#%%%###%##*++++***#%*-+##%%%%%%##*#**####%#+****%%*++:--..-++--:...........::</text>
+<text xml:space="preserve" class="row" x="8" y="458" style="animation-delay:1.100s">:::...:::::::::::...:-*+-::::---*#%%%##%%%##-++*****+++#%@@@@@@@%@@%*++++*#%%*+**+:--:.:..-+++--:...........::</text>
+<text xml:space="preserve" class="row" x="8" y="468" style="animation-delay:1.125s">............::--::...-*+-::::::+*#%%%%%%%%##**********%@@@@@@@@@@@@%#+::--+##*-+-++++:..:++++---:...........::</text>
+<text xml:space="preserve" class="row" x="8" y="478" style="animation-delay:1.150s">.............::::-::.:*+::::::-+**####%%%%###*****#**#%@@@@@@@@@@@@%%*+----+#**#**+--::*##*++---:...........::</text>
+<text xml:space="preserve" class="row" x="8" y="488" style="animation-delay:1.175s">.....::.......::..::::**+-:..::-+**###%%%####*****#***%@@@@@@@%@@@@%#**##%###**#*++--:+#####*+--:............:</text>
+<text xml:space="preserve" class="row" x="8" y="498" style="animation-delay:1.200s">....::::.......::::::-+**+-..::::-+**#%%%%###****##*++#@@@@@@@%%%%%##*+*****#****+--::*######*--:............:</text>
+<text xml:space="preserve" class="row" x="8" y="508" style="animation-delay:1.225s">.....::........:::::::-***-:-:...:--+*#####******#**-++#%%%%%####*+++*******##++++--:+###%##**+-:.............</text>
+<text xml:space="preserve" class="row" x="8" y="518" style="animation-delay:1.250s">...............::::::::+*+*++-:..:--+++****+******++++++++++++-++++++*******#**++---:*######***-:.............</text>
+<text xml:space="preserve" class="row" x="8" y="528" style="animation-delay:1.275s">...................:::.:--+**+-...:--+++**+-+##**##++---+-+++-+-++-++**+####****+--:-*######**+-:.............</text>
+<text xml:space="preserve" class="row" x="8" y="538" style="animation-delay:1.300s">....................:::.:----*+-:..::-++++-+*##***+++--++++++++++++**######***+++-:.+######***+:..............</text>
+<text xml:space="preserve" class="row" x="8" y="548" style="animation-delay:1.325s">::.................::... .::-***--...:--+-++*#***++-+--+++++++++++**####*#**+++--:::*#####***+-:............  </text>
+<text xml:space="preserve" class="row" x="8" y="558" style="animation-delay:1.350s">:....................    .-+*++**+-..::++-+**####*+-----+++++--+++**######***++--:.-*#******+-:.............  </text>
+<text xml:space="preserve" class="row" x="8" y="568" style="animation-delay:1.375s">.................       .:-+++-+++*+:..---+**#####*+++++***++++++**######****++-:..+******++-:..............  </text>
+<text xml:space="preserve" class="row" x="8" y="578" style="animation-delay:1.400s">...............         .:-+--::--+++:..:-+****###+*+************#######**++++--:.:***++++-:::.............   </text>
+<text xml:space="preserve" class="row" x="8" y="588" style="animation-delay:1.425s">...............        .:-++-:::-+++-. ..:-++**##*+*++***********###*##**+++---:..:-------:::::............   </text>
+<text xml:space="preserve" class="row" x="8" y="598" style="animation-delay:1.450s">...............        .:----------:.  .::--++****+++****+*******#####****++---:. :-----::::::............... </text>
+<text xml:space="preserve" class="row" x="8" y="608" style="animation-delay:1.475s">    ..::::......       ...::-+-:::... .:..--++*+::++++++--+*****####****++----:. .:----:::::................. </text>
+<text xml:space="preserve" class="row" x="8" y="618" style="animation-delay:1.500s">    ..::::::.....       ..:----+---:.....::-+++-:-+----::--++++******+-++-::::.  .-------:::............... . </text>
+<text xml:space="preserve" class="row" x="8" y="628" style="animation-delay:1.525s">    ..::::::......      .::-----++****+-:::---:.:----::::--+++*****++-+---:::.. .-+++----::::.................</text>
+<text xml:space="preserve" class="row" x="8" y="638" style="animation-delay:1.550s">    ...::::::......      ..:-----++******-----:::-::....:--++*****++-----:::..:-++++----:::.........         .</text>
+<text xml:space="preserve" class="row" x="8" y="648" style="animation-delay:1.575s">     ...::::::........   ...::----+++++++----:::::::....:---+++++-+---:::...:--+++-----:::........            </text>
+<text xml:space="preserve" class="row" x="8" y="658" style="animation-delay:1.600s">       ...::::::::.......   .....::---------::::::.::::::--+++++++-::::...:-++-------::::......               </text>
+<text xml:space="preserve" class="row" x="8" y="668" style="animation-delay:1.625s">        .......:::::........        ..:-:...::---::.....:--++++--:..::.::---------::::......                  </text>
+<text xml:space="preserve" class="row" x="8" y="678" style="animation-delay:1.650s">.............................          ......:..:::::::::-----::....::---------:::::......                    </text>
+<text xml:space="preserve" class="row" x="8" y="688" style="animation-delay:1.675s">...................................................::::::::::... .::------::::::........                      </text>
+<text xml:space="preserve" class="row" x="8" y="698" style="animation-delay:1.700s">..........................................:::::::::::::::::::::::::::.................                        </text>
+<text xml:space="preserve" class="row" x="8" y="708" style="animation-delay:1.725s">..............................................::::::::::::::::::::::::::........................              </text>
+<text xml:space="preserve" class="row" x="8" y="718" style="animation-delay:1.750s">.............................................::::::::::::::::::::::...........................................</text>
+</svg>
