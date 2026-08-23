@@ -2,13 +2,10 @@ import sys
 from pathlib import Path
 
 import cv2
-import numpy as np
-from PIL import Image
-from rembg import remove
 
 
 if len(sys.argv) < 2:
-    print("Usage: python scripts/prep_photo.py source-photo.jpg")
+    print("Usage: python scripts/prep_photo.py source-photo.png")
     sys.exit(1)
 
 input_path = Path(sys.argv[1])
@@ -18,24 +15,15 @@ if not input_path.exists():
     print(f"File not found: {input_path}")
     sys.exit(1)
 
-# Remove background
-with open(input_path, "rb") as f:
-    input_image = f.read()
+# Read image
+image = cv2.imread(str(input_path))
 
-output_image = remove(input_image)
-
-temp_path = Path("temp_no_bg.png")
-temp_path.write_bytes(output_image)
-
-# Open image
-image = Image.open(temp_path).convert("RGBA")
-
-# Put subject on white background
-background = Image.new("RGBA", image.size, "white")
-background.alpha_composite(image)
+if image is None:
+    print("Could not read image.")
+    sys.exit(1)
 
 # Convert to grayscale
-gray = np.array(background.convert("L"))
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # Improve local contrast
 clahe = cv2.createCLAHE(
@@ -45,7 +33,7 @@ clahe = cv2.createCLAHE(
 
 gray = clahe.apply(gray)
 
-# Slightly improve overall contrast
+# Improve overall contrast
 gray = cv2.normalize(
     gray,
     None,
@@ -54,8 +42,10 @@ gray = cv2.normalize(
     cv2.NORM_MINMAX
 )
 
-cv2.imwrite(str(output_path), gray)
+# Slightly sharpen
+gray = cv2.GaussianBlur(gray, (3, 3), 0)
 
-temp_path.unlink(missing_ok=True)
+# Save
+cv2.imwrite(str(output_path), gray)
 
 print(f"Created: {output_path}")
