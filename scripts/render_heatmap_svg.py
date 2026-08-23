@@ -67,7 +67,7 @@ svg = [
 
         .cell {
             opacity: 0;
-            animation: reveal 0.75s ease-out forwards;
+            animation: reveal 0.375s ease-out forwards;
         }
 
         @keyframes reveal {
@@ -127,10 +127,10 @@ for week_index, week in enumerate(weeks):
 
         color = PALETTE[level]
 
-        # 2x faster stagger
+        # Faster staggered animation
         delay = (
-            week_index * 0.075
-            + day_index * 0.015
+            week_index * 0.0375
+            + day_index * 0.0075
         )
 
         svg.append(
@@ -142,7 +142,7 @@ for week_index, week in enumerate(weeks):
             f'height="{CELL}" '
             f'rx="2" '
             f'fill="{color}" '
-            f'style="animation-delay:{delay:.3f}s">'
+            f'style="animation-delay:{delay:.4f}s">'
 
             f'<title>'
             f'{day["date"]}: '
