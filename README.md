@@ -1,3 +1,18 @@
+<div align="center">
+
+<table>
+<tr>
+
+<td width="45%" align="center">
+
+### 📊 GitHub Activity
+
+<img src="./contrib-heatmap.svg" width="420">
+
+</td>
+
+<td width="55%" align="left">
+
 # Arnav Gupta
 
 **CSE @ VIT Vellore**  
@@ -5,17 +20,24 @@
 
 React · Next.js · Node.js · AI/ML · DSA
 
+### 🌐 Connect
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/arnav-gupta-17b209328)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/arnav-0408)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:arnavsm96@gmail.com)
+
+</td>
+
+</tr>
+</table>
+
+</div>
+
 ---
 
 ## 💫 About Me
 
 Third-year CSE undergraduate at **VIT Vellore**, focused on **full-stack development, DSA, and AI/ML**. I enjoy building practical applications with **React, Next.js, Node.js, and Python**, while continuously improving my problem-solving and software engineering skills.
-
-## 🌐 Connect
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/arnav-gupta-17b209328)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/arnav-0408)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:arnavsm96@gmail.com)
 
 ---
 
@@ -48,7 +70,6 @@ Third-year CSE undergraduate at **VIT Vellore**, focused on **full-stack develop
 
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/NodeJS-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Nodemon](https://img.shields.io/badge/Nodemon-76D04B?style=for-the-badge&logo=nodemon&logoColor=white)
 ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
@@ -70,16 +91,6 @@ Third-year CSE undergraduate at **VIT Vellore**, focused on **full-stack develop
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 ![Apache Maven](https://img.shields.io/badge/Apache_Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
-
----
-
-## 📊 GitHub Activity
-
-<div align="center">
-
-<img src="./contrib-heatmap.svg" width="860">
-
-</div>
 
 ---
 
