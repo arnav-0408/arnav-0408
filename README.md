@@ -1,13 +1,5 @@
 <div align="center">
 
-# 📊 GitHub Activity
-
-<img src="./contrib-heatmap.svg" width="860">
-
-</div>
-
----
-
 <table>
 <tr>
 <td width="30%" align="center">
@@ -36,6 +28,8 @@ Building modern web applications with **React, Next.js & Node.js** while explori
 </tr>
 </table>
 
+</div>
+
 ---
 
 ## 💫 About Me
@@ -62,6 +56,7 @@ Third-year Computer Science undergraduate at **VIT Vellore**, focused on **full-
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white)
@@ -71,7 +66,6 @@ Third-year Computer Science undergraduate at **VIT Vellore**, focused on **full-
 
 ### Backend
 
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Nodemon](https://img.shields.io/badge/Nodemon-76D04B?style=for-the-badge&logo=nodemon&logoColor=white)
